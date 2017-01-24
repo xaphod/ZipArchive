@@ -15,62 +15,66 @@ import UIKit
 #endif
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var zipButton: UIButton!
     @IBOutlet weak var unzipButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-
+    
     @IBOutlet weak var file1: UILabel!
     @IBOutlet weak var file2: UILabel!
     @IBOutlet weak var file3: UILabel!
-
+    
     var zipPath: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        file1.text = ""
+        file2.text = ""
+        file3.text = ""
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: IBAction
-
+    
     @IBAction func zipPressed(_: UIButton) {
-        let sampleDataPath = Bundle.main.bundleURL.appendingPathComponent("Sample Data").path
+        let sampleDataPath = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("Sample Data")!.path
         zipPath = tempZipPath()
-
-        let success = SSZipArchive.createZipFile(atPath: zipPath!, withContentsOfDirectory: sampleDataPath)
+        
+        let success = SSZipArchive.createZipFileAtPath(zipPath!, withContentsOfDirectory: sampleDataPath!)
         if success {
-            unzipButton.isEnabled = true
-            zipButton.isEnabled = false
+            unzipButton.enabled = true
+            zipButton.enabled = false
         }
     }
-
+    
     @IBAction func unzipPressed(_: UIButton) {
         guard let zipPath = self.zipPath else {
             return
         }
-
+        
         guard let unzipPath = tempUnzipPath() else {
             return
         }
-
-        let success = SSZipArchive.unzipFile(atPath: zipPath, toDestination: unzipPath)
+        
+        let success = SSZipArchive.unzipFileAtPath(zipPath, toDestination: unzipPath)
         if !success {
             return
         }
-
+        
         var items: [String]
         do {
-            items = try FileManager.default.contentsOfDirectory(atPath: unzipPath)
+            items = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(unzipPath)
         } catch {
             return
         }
-
-        for (index, item) in items.enumerated() {
+        
+        for (index, item) in items.enumerate() {
             switch index {
             case 0:
                 file1.text = item
@@ -82,41 +86,44 @@ class ViewController: UIViewController {
                 print("Went beyond index of assumed files")
             }
         }
-
-        unzipButton.isEnabled = false
-        resetButton.isEnabled = true
+        
+        unzipButton.enabled = false
+        resetButton.enabled = true
     }
-
+    
     @IBAction func resetPressed(_: UIButton) {
         file1.text = ""
         file2.text = ""
         file3.text = ""
-        zipButton.isEnabled = true
-        unzipButton.isEnabled = false
-        resetButton.isEnabled = false
+        zipButton.enabled = true
+        unzipButton.enabled = false
+        resetButton.enabled = false
     }
-
+    
     // MARK: Private
-
+    
     func tempZipPath() -> String {
-        var path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
-        path += "/\(UUID().uuidString).zip"
+        var path = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
+        path += "/\(NSUUID().UUIDString).zip"
         return path
     }
-
+    
     func tempUnzipPath() -> String? {
-        var path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
-        path += "/\(UUID().uuidString)"
-        let url = URL(fileURLWithPath: path)
-
+        var path = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
+        path += "/\(NSUUID().UUIDString)"
+        let url = NSURL(fileURLWithPath: path)
+        
         do {
-            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+            try NSFileManager.defaultManager().createDirectoryAtURL(url, withIntermediateDirectories: true, attributes: nil)
         } catch {
             return nil
         }
-
-
-        return url.path
+        
+        if let path = url.path {
+            return path
+        }
+        
+        return nil
     }
     
 }
