@@ -482,13 +482,16 @@ NSString *const SSZipArchiveErrorDomain = @"SSZipArchiveErrorDomain";
             }
             ret = unzGoToNextFile(zip);
             
-            // Message delegate
-            if ([delegate respondsToSelector:@selector(zipArchiveDidUnzipFileAtIndex:totalFiles:archivePath:fileInfo:)]) {
-                [delegate zipArchiveDidUnzipFileAtIndex:currentFileNumber totalFiles:(NSInteger)globalInfo.number_entry
-                                            archivePath:path fileInfo:fileInfo];
-            } else if ([delegate respondsToSelector: @selector(zipArchiveDidUnzipFileAtIndex:totalFiles:archivePath:unzippedFilePath:)]) {
-                [delegate zipArchiveDidUnzipFileAtIndex: currentFileNumber totalFiles: (NSInteger)globalInfo.number_entry
-                                            archivePath:path unzippedFilePath: fullPath];
+            // TC MOD: ONLY message if not a dir and not a symlink. Plus, include the full filepath
+            if (!isDirectory && !fileIsSymbolicLink) {
+                // Message delegate
+                if ([delegate respondsToSelector:@selector(zipArchiveDidUnzipFileAtIndex:totalFiles:archivePath:fileInfo:)]) {
+                    [delegate zipArchiveDidUnzipFileAtIndex:currentFileNumber totalFiles:(NSInteger)globalInfo.number_entry
+                                                archivePath:path fileInfo:fileInfo];
+                } else if ([delegate respondsToSelector: @selector(zipArchiveDidUnzipFileAtIndex:totalFiles:archivePath:fileInfo:unzippedFilePath:)]) {
+                    [delegate zipArchiveDidUnzipFileAtIndex: currentFileNumber totalFiles: (NSInteger)globalInfo.number_entry
+                                                archivePath:path fileInfo:fileInfo unzippedFilePath: fullPath];
+                }
             }
             
             currentFileNumber++;
