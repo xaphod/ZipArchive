@@ -235,7 +235,7 @@ NSString *const SSZipArchiveErrorDomain = @"SSZipArchiveErrorDomain";
     int crc_ret = 0;
     unsigned char buffer[4096] = {0};
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSMutableArray *directoriesModificationDates = [[NSMutableArray alloc] init];
+    // NSMutableArray *directoriesModificationDates = [[NSMutableArray alloc] init];
     
     // Message delegate
     if ([delegate respondsToSelector:@selector(zipArchiveWillUnzipArchiveAtPath:zipInfo:)]) {
@@ -350,7 +350,7 @@ NSString *const SSZipArchiveErrorDomain = @"SSZipArchiveErrorDomain";
             if (preserveAttributes) {
                 NSDate *modDate = [[self class] _dateWithMSDOSFormat:(UInt32)fileInfo.dosDate];
                 directoryAttr = @{NSFileCreationDate: modDate, NSFileModificationDate: modDate};
-                [directoriesModificationDates addObject: @{@"path": fullPath, @"modDate": modDate}];
+                // [directoriesModificationDates addObject: @{@"path": fullPath, @"modDate": modDate}];
             }
             if (isDirectory) {
                 [fileManager createDirectoryAtPath:fullPath withIntermediateDirectories:YES attributes:directoryAttr  error:&err];
@@ -505,23 +505,24 @@ NSString *const SSZipArchiveErrorDomain = @"SSZipArchiveErrorDomain";
     // Close
     unzClose(zip);
     
-    // The process of decompressing the .zip archive causes the modification times on the folders
-    // to be set to the present time. So, when we are done, they need to be explicitly set.
-    // set the modification date on all of the directories.
-    if (success && preserveAttributes) {
-        NSError * err = nil;
-        for (NSDictionary * d in directoriesModificationDates) {
-            if (![[NSFileManager defaultManager] setAttributes:@{NSFileModificationDate: d[@"modDate"]} ofItemAtPath:d[@"path"] error:&err]) {
-                NSLog(@"[SSZipArchive] Set attributes failed for directory: %@.", d[@"path"]);
-            }
-            if (err) {
-                NSLog(@"[SSZipArchive] Error setting directory file modification date attribute: %@",err.localizedDescription);
-            }
-        }
-#if !__has_feature(objc_arc)
-        [directoriesModificationDates release];
-#endif
-    }
+    // TC MOD: DON'T NEED THIS (files are usually deleted by the time we get here)
+//    // The process of decompressing the .zip archive causes the modification times on the folders
+//    // to be set to the present time. So, when we are done, they need to be explicitly set.
+//    // set the modification date on all of the directories.
+//    if (success && preserveAttributes) {
+//        NSError * err = nil;
+//        for (NSDictionary * d in directoriesModificationDates) {
+//            if (![[NSFileManager defaultManager] setAttributes:@{NSFileModificationDate: d[@"modDate"]} ofItemAtPath:d[@"path"] error:&err]) {
+//                NSLog(@"[SSZipArchive] Set attributes failed for directory: %@.", d[@"path"]);
+//            }
+//            if (err) {
+//                NSLog(@"[SSZipArchive] Error setting directory file modification date attribute: %@",err.localizedDescription);
+//            }
+//        }
+//#if !__has_feature(objc_arc)
+//        [directoriesModificationDates release];
+//#endif
+//    }
     
     // Message delegate
     if (success && [delegate respondsToSelector:@selector(zipArchiveDidUnzipArchiveAtPath:zipInfo:unzippedPath:)]) {
