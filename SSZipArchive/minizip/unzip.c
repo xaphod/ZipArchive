@@ -940,7 +940,7 @@ extern int ZEXPORT unzGetCurrentFileInfo(unzFile file, unz_file_info *pfile_info
         pfile_info->internal_fa = file_info64.internal_fa;
         pfile_info->external_fa = file_info64.external_fa;
 
-        pfile_info->tmu_date = file_info64.tmu_date,
+        pfile_info->tmu_date = file_info64.tmu_date;
 
         pfile_info->compressed_size = (uLong)file_info64.compressed_size;
         pfile_info->uncompressed_size = (uLong)file_info64.uncompressed_size;
@@ -1206,7 +1206,7 @@ extern int ZEXPORT unzOpenCurrentFile3(unzFile file, int *method, int *level, in
             if (ZREAD64(s->z_filefunc, s->filestream, passverify_archive, AES_PWVERIFYSIZE) != AES_PWVERIFYSIZE)
                 return UNZ_INTERNALERROR;
 
-            fcrypt_init(s->cur_file_info_internal.aes_encryption_mode, password, strlen(password), saltvalue,
+            fcrypt_init((unsigned int)s->cur_file_info_internal.aes_encryption_mode, (unsigned char *)password, (unsigned int)strlen(password), saltvalue,
                 passverify_password, &s->pfile_in_zip_read->aes_ctx);
 
             if (memcmp(passverify_archive, passverify_password, AES_PWVERIFYSIZE) != 0)
