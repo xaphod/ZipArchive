@@ -17,9 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString *const SSZipArchiveErrorDomain;
 typedef NS_ENUM(NSInteger, SSZipArchiveErrorCode) {
     SSZipArchiveErrorCodeFailedOpenZipFile      = -1,
-    SSZipArchiveErrorCodeFailedOpenFirstFile    = -2,
+    SSZipArchiveErrorCodeFailedOpenFileInZip    = -2,
     SSZipArchiveErrorCodeFileInfoNotLoadable    = -3,
     SSZipArchiveErrorCodeFileContentNotReadable = -4,
+    SSZipArchiveErrorCodeFailedToWriteFile      = -5,
+    SSZipArchiveErrorCodeInvalidArguments       = -6,
 };
 
 @protocol SSZipArchiveDelegate;
