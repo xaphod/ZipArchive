@@ -101,7 +101,6 @@
 		37952C551F63B7A000DD6677 /* pwd2key.h in Headers */ = {isa = PBXBuildFile; fileRef = 373913F81F0009310094DB3B /* pwd2key.h */; };
 		37952C561F63B7A000DD6677 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 373913F91F0009310094DB3B /* sha1.c */; };
 		37952C571F63B7A000DD6677 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 373913FA1F0009310094DB3B /* sha1.h */; };
-		37952C581F63B8C400DD6677 /* SSZipArchive+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACF3E91D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift */; };
 		37952C661F63BBBB00DD6677 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 373913FC1F0009320094DB3B /* crypt.c */; };
 		37952C671F63BBBB00DD6677 /* ioapi_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = 373913E41F0009310094DB3B /* ioapi_buf.c */; };
 		37952C681F63BBBB00DD6677 /* ioapi_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = 373913E51F0009310094DB3B /* ioapi_buf.h */; };
@@ -138,12 +137,10 @@
 		37952C871F63BBC000DD6677 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 373913FA1F0009310094DB3B /* sha1.h */; };
 		37952C881F63BBD500DD6677 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = B423AE481C0DF7950004A2F1 /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37952C891F63BBDA00DD6677 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B423AE491C0DF7950004A2F1 /* SSZipArchive.m */; };
-		37952C8A1F63BBE100DD6677 /* SSZipArchive+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACF3E91D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift */; };
 		37952C8B1F63BBE400DD6677 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = B423AE4A1C0DF7950004A2F1 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37952C8C1F63BBED00DD6677 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B423AE6E1C0DF83F0004A2F1 /* libz.tbd */; };
 		37952C8D1F63BBF300DD6677 /* SSZipCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 389869341D5BC30100F18782 /* SSZipCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		389869351D5BC30100F18782 /* SSZipCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 389869341D5BC30100F18782 /* SSZipCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87ACF3EA1D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACF3E91D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift */; };
 		AFF75A2D1C3727F000F450AC /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = B423AE4A1C0DF7950004A2F1 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFF75A2E1C37280200F450AC /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = B423AE481C0DF7950004A2F1 /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFF75A2F1C37280200F450AC /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B423AE491C0DF7950004A2F1 /* SSZipArchive.m */; };
@@ -199,7 +196,6 @@
 		37952C261F63B50D00DD6677 /* ZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37952C5E1F63BB7100DD6677 /* ZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		389869341D5BC30100F18782 /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
-		87ACF3E91D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SSZipArchive+Swift.swift"; sourceTree = "<group>"; };
 		AFF75A241C37279600F450AC /* ZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B423AE1A1C0DF76A0004A2F1 /* ZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B423AE3D1C0DF7950004A2F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -307,7 +303,6 @@
 				B423AE3E1C0DF7950004A2F1 /* minizip */,
 				B423AE481C0DF7950004A2F1 /* SSZipArchive.h */,
 				B423AE491C0DF7950004A2F1 /* SSZipArchive.m */,
-				87ACF3E91D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift */,
 				B423AE4A1C0DF7950004A2F1 /* ZipArchive.h */,
 			);
 			path = SSZipArchive;
@@ -318,15 +313,15 @@
 			children = (
 				373913E61F0009310094DB3B /* aes */,
 				373913FC1F0009320094DB3B /* crypt.c */,
+				B423AE3F1C0DF7950004A2F1 /* crypt.h */,
 				373913E41F0009310094DB3B /* ioapi_buf.c */,
 				373913E51F0009310094DB3B /* ioapi_buf.h */,
 				373913FD1F0009320094DB3B /* ioapi_mem.c */,
 				373913FF1F0009320094DB3B /* ioapi_mem.h */,
-				373913FB1F0009320094DB3B /* minishared.c */,
-				373913FE1F0009320094DB3B /* minishared.h */,
-				B423AE3F1C0DF7950004A2F1 /* crypt.h */,
 				B423AE401C0DF7950004A2F1 /* ioapi.c */,
 				B423AE411C0DF7950004A2F1 /* ioapi.h */,
+				373913FB1F0009320094DB3B /* minishared.c */,
+				373913FE1F0009320094DB3B /* minishared.h */,
 				B423AE441C0DF7950004A2F1 /* unzip.c */,
 				B423AE451C0DF7950004A2F1 /* unzip.h */,
 				B423AE461C0DF7950004A2F1 /* zip.c */,
@@ -532,7 +527,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = smumryak;
 				TargetAttributes = {
 					37952C251F63B50D00DD6677 = {
@@ -608,7 +603,6 @@
 			files = (
 				37952C541F63B7A000DD6677 /* pwd2key.c in Sources */,
 				37952C521F63B7A000DD6677 /* prng.c in Sources */,
-				37952C581F63B8C400DD6677 /* SSZipArchive+Swift.swift in Sources */,
 				37952C401F63B78A00DD6677 /* ioapi_mem.c in Sources */,
 				37952C561F63B7A000DD6677 /* sha1.c in Sources */,
 				37952C4A1F63B7A000DD6677 /* aestab.c in Sources */,
@@ -633,7 +627,6 @@
 			files = (
 				37952C801F63BBC000DD6677 /* hmac.c in Sources */,
 				37952C841F63BBC000DD6677 /* pwd2key.c in Sources */,
-				37952C8A1F63BBE100DD6677 /* SSZipArchive+Swift.swift in Sources */,
 				37952C7E1F63BBC000DD6677 /* fileenc.c in Sources */,
 				37952C891F63BBDA00DD6677 /* SSZipArchive.m in Sources */,
 				37952C7A1F63BBC000DD6677 /* aestab.c in Sources */,
@@ -682,7 +675,6 @@
 			files = (
 				3739141D1F0009FF0094DB3B /* hmac.c in Sources */,
 				3739140E1F0009E50094DB3B /* aes_ni.c in Sources */,
-				87ACF3EA1D2DAFAD00ED2F7E /* SSZipArchive+Swift.swift in Sources */,
 				373914211F0009FF0094DB3B /* pwd2key.c in Sources */,
 				373914171F0009FF0094DB3B /* aestab.c in Sources */,
 				373914021F0009C80094DB3B /* minishared.c in Sources */,
@@ -710,7 +702,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -719,7 +711,7 @@
 				INFOPLIST_FILE = SSZipArchive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -735,7 +727,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
@@ -745,7 +737,7 @@
 				INFOPLIST_FILE = SSZipArchive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -762,7 +754,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -771,7 +763,7 @@
 				INFOPLIST_FILE = SSZipArchive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -790,7 +782,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
@@ -800,7 +792,7 @@
 				INFOPLIST_FILE = SSZipArchive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -824,7 +816,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -846,7 +838,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -866,12 +858,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -921,12 +915,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -975,7 +971,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1000,7 +996,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ZipArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ZipArchive;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1026,6 +1022,7 @@
 				37952C641F63BB7100DD6677 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFF75A291C37279600F450AC /* Build configuration list for PBXNativeTarget "ZipArchive-Mac" */ = {
 			isa = XCConfigurationList;
