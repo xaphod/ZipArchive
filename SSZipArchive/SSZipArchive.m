@@ -472,7 +472,7 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo);
                                             delegate:nil
                                      progressHandler:nil
                                    completionHandler:nil]) {
-                            [directoriesModificationDates removeLastObject];
+//                            [directoriesModificationDates removeLastObject];
                             [[NSFileManager defaultManager] removeItemAtPath:fullPath error:nil];
                         } else if (preserveAttributes) {
                             
